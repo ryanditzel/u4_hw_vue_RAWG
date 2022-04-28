@@ -34,7 +34,7 @@ Head over to this link [Here](https://rawg.io/apidocs) to get your own API key. 
 Let's take a look at the structure of the app we've just cloned. You've been provided with all of the components you'll need to complete this exercise.
 
 <p align="center" >
-  <img height="300" alt="tree" src="https://i.ibb.co/w4qcBTC/Screen-Shot-2022-04-28-at-9-09-20-AM.png" />
+  <img width="100%" alt="tree" src="https://i.ibb.co/w4qcBTC/Screen-Shot-2022-04-28-at-9-09-20-AM.png" />
 </p>
 
 **Note: The app will show an error until `Step 2` is complete.**
