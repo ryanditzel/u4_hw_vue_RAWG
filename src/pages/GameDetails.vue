@@ -1,27 +1,40 @@
 <template>
-  <div class="game-content">
+  <div class="game-content" v-if="gameDetails">
     <section class="image-container">
-      <div></div>
+      <div>
+        <img :src="gameDetails.background_image" />
+      </div>
     </section>
     <section class="details">
       <div class="flex-row space"></div>
       <div>
-        <h3></h3>
+        <h3>{{ gameDetails.name }}</h3>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+const API_KEY = process.env.VUE_APP_RAWG_KEY
   export default {
     name: 'GameDetails',
+    props: {
+      result: {}
+    },
     data: () => ({
       gameDetails: null
     }),
-    mounted() {},
+    mounted() {
+      this.getGameDetails()
+    },
     methods: {
       async getGameDetails() {
-        // Get game id from router here
+        let gameId = parseInt(this.$route.params.game_id)
+        console.log(typeof gameId)
+        const res = await axios.get(`https://api.rawg.io/api/games/${gameId}?key=${API_KEY}`)
+        this.gameDetails=res.data
+        console.log(res.data)
       }
     }
   }
